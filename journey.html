@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.cdnfonts.com/css/ghibli" rel="stylesheet">
+        <link rel="icon" type="image/png" href="love.png">
+        <title>Nadya's Valentine</title>
+    </head>
+    <body>
+        <div class="clouds">
+            <img class="love-img" src="love.png" alt="start-button">
+            <img class="love-img" src="love.png" alt="start-button">
+        </div>
+        <div class="texts" style="margin-top: 2vw;">
+            <h5>How long we've known each other?</h5>
+        </div>
+        <div id="countdown">
+            <div class="countdown-item" id="days">
+                <span class="countdown-number">0</span>
+                <span class="countdown-text">Days</span>
+            </div>
+            <div class="countdown-item" id="hours">
+                <span class="countdown-number">0</span>
+                <span class="countdown-text">Hours</span>
+            </div>
+            <div class="countdown-item" id="minutes">
+                <span class="countdown-number">0</span>
+                <span class="countdown-text">Minutes</span>
+            </div>
+            <div class="countdown-item" id="seconds">
+                <span class="countdown-number">0</span>
+                <span class="countdown-text">Seconds</span>
+            </div>
+        <div>
+            <button class="container-start-button" type="button" onclick="window.location.href='./menu.html'">
+                <!-- image -->
+                <img class="love-img" src="back.png">
+            </button>
+        </div>
+    </body>
+    <script>
+        var targetDate = new Date("2023-11-14T11:59:59");
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = now - targetDate;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").getElementsByClassName("countdown-number")[0].innerHTML = days;
+            document.getElementById("hours").getElementsByClassName("countdown-number")[0].innerHTML = hours;
+            document.getElementById("minutes").getElementsByClassName("countdown-number")[0].innerHTML = minutes;
+            document.getElementById("seconds").getElementsByClassName("countdown-number")[0].innerHTML = seconds;
+        }, 5);
+    </script>
+</html>
