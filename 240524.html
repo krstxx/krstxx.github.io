@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.cdnfonts.com/css/ghibli" rel="stylesheet">
+        <link rel="icon" type="image/png" href="love.png">
+        <title>Nadya's Valentine</title>
+    </head>
+    <body>
+        <div class="clouds">
+            <img class="love-img" src="love.png" alt="start-button">
+            <img class="love-img" src="love.png" alt="start-button">
+            <img class="love-img" src="love.png" alt="start-button">
+        </div>
+        <div class="grid-img">
+            <div class="grid-container" id="image-container">
+            </div>              
+        </div>
+        <button class="container-start-button" type="button" onclick="window.location.href='./menu.html'">
+            <!-- image -->
+            <img class="love-img" src="back.png">
+        </button>
+    </body>
+    <script>
+        const fileIDs = [
+            '10ZKpvExDueu56qu0pyoqUy0d5nKp0PAw',
+            '10Sk0r-0VmnAnqjJFnKS38cbmYHmNbONr',
+            '10O6DAf7akxo0V-IF6GpSC6_7OFU_pZvu',
+            '11MHkMmi8f9R1dUH2dNH8YSVjNoTKVOGC',
+            '10aen7tEYAaOG0OTQC6uQPEyyClSvIJlI',
+            '11YFxcolgDJc7Rx593U-xaLt0pbldrwQQ',
+            '10wvWvjW3yp9YljDmVYrMcbkhuCf2A9Zm',
+            '10w4UWBM8hoHXNgAdvvvcGHWk6uqtR_q1',
+            '11BjGFAi2x-emVGSi99btcDTwcFWxmQ4v'
+        ];
+        function displayImages(fileIDs) {
+            const container = document.getElementById('image-container');
+            
+            fileIDs.forEach(id => {
+                const img = document.createElement('img');
+                img.src = `https://drive.google.com/thumbnail?id=${id}&sz=w400`;
+                img.alt = 'frame';
+                container.appendChild(img);
+            });
+        }
+        displayImages(fileIDs);
+    </script>
+</html>
